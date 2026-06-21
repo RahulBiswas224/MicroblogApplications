@@ -1,4 +1,4 @@
-# Microblog Sourav
+# Microblog 
 
 A session-based full-stack microblog starter built with a React frontend and a Node.js backend. It leverages modern web technologies to deliver a seamless user experience for content sharing and profile management.
 
