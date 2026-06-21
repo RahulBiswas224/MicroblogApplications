@@ -1,0 +1,440 @@
+/* ===== General Styles ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #798ebb;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(160deg, #042d49, #9bc3de);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.sidebar ul li.active {
+  background: rgb(25, 47, 60);
+  color: #9ac6e3;
+  font-weight: bold;
+}
+
+/* Sidebar profile */
+.sidebar .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: black;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidebar .profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Feed/Main ===== */
+.feed {
+  flex: 1;
+  padding: 25px;
+  max-width: 750px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+/* ===== New Post Box ===== */
+.new-post {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.new-post:hover {
+  transform: translateY(-3px);
+}
+
+.new-post textarea {
+  border: none;
+  resize: none;
+  font-size: 16px;
+  padding: 12px;
+  outline: none;
+  min-height: 90px;
+  border-radius: 10px;
+  background: #f0f2f5;
+}
+
+.new-post button {
+  align-self: flex-end;
+  margin-top: 12px;
+  background: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.new-post button:hover {
+  background: #0d8ae0;
+  transform: translateY(-2px);
+}
+
+/* ===== Posts ===== */
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-header strong {
+  font-size: 16px;
+}
+
+.post-header small {
+  display: block;
+  font-size: 12px;
+  color: gray;
+}
+
+.post-text {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.post-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.post-actions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: #f0f2f5;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.post-actions button:hover {
+  background: #e0e7ff;
+  transform: translateY(-2px);
+}
+
+.like-btn.liked {
+  background: #ff4d6d;
+  color: white;
+}
+
+.like-btn.liked:hover {
+  background: #e03e5a;
+}
+
+/* ===== Empty State ===== */
+.empty {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+/* ===== Photo Section ===== */
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.photo-section .preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.photo-section .preview:hover {
+  transform: scale(1.05);
+}
+
+.photo-section input[type="file"] {
+  margin-top: 8px;
+}
+
+/* ===== Login Page ===== */
+
+/* === Background === */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://png.pngtree.com/thumb_back/fh260/background/20230716/pngtree-portfolio-displays-and-mobile-apps-with-3d-shapes-chat-messages-and-image_3879137.jpg")
+    no-repeat center center / cover;
+  background-attachment: fixed;
+}
+
+/* === Glass Box === */
+.login-glass {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  padding: 45px 40px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-glass:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(29, 155, 240, 0.6);
+}
+
+/* === Headings === */
+.login-glass h2 {
+  margin-bottom: 8px;
+  font-size: 26px;
+  color: #1d9bf0;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #ddd;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* === Input Fields === */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* === Button === */
+.login-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #1d9bf0;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #0d8ae0;
+  transform: translateY(-2px);
+}
+
+/* === Switch Link === */
+.switch-link {
+  margin-top: 18px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #eee;
+  transition: color 0.3s;
+}
+
+.switch-link:hover {
+  color: #1d9bf0;
+}
+
+
+/* ===== Settings ===== */
+/* ===== Settings Page ===== */
+.settings-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  background: #f3f5f7;
+}
+
+.settings-card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.settings-card h2 {
+  color: #1d9bf0;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.settings-card label {
+  font-weight: 600;
+  display: block;
+  margin: 12px 0 5px;
+}
+
+.settings-card input[type='text'],
+.settings-card input[type='file'] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.settings-card .update-btn {
+  width: 100%;
+  background: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.settings-card .update-btn:hover {
+  background: #0d8ae0;
+}
+
+.settings-card .remove-btn {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 30px;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.settings-card .clear-btn {
+  background: #d63031;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.settings-card button:hover {
+  opacity: 0.9;
+}
